@@ -50,7 +50,7 @@ def main():
             for tkr in main_soup:
                 json.dump(tkr, df, indent = 2) 
     except:
-        print('One of the tickers you entered is unavailable, please try again')
+        print('ERROR: One or more ticker(s) the user inputed is/are unavailable, please try again')
     
 if __name__ == "__main__":
     main()
