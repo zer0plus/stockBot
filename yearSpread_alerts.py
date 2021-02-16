@@ -32,12 +32,25 @@ def process(inp_wl):
 
 def main():
     spacs = ['QQQ', 'GSAH', 'GIK', 'APXT', 'THCB', 'TTCF', 'CCIV']
-    soup = process(spacs)
-    main_soup = soup[0]
+    while(True):
+        print("Your current watchlist contains the following stocks: " + str(spacs))
+        try:
+            inp1 = int(input("Press 1 to enter more stocks or press 0 to continue: "))
+            if(inp1 == 1):
+                inp2 = input("Enter the stock ticker that you want to add to the watchlist: ")
+                spacs.append(inp2)
+            else:
+                break
+        except:
+            print("Please Enter either 1 or 0")
+    try:
+        soup = process(spacs)
+        main_soup = soup[0]
+        with open('dailyreport.json', 'w') as df:
+            for tkr in main_soup:
+                json.dump(tkr, df, indent = 2) 
+    except:
+        print('One of the tickers you entered is unavailable, please try again')
     
-    with open('dailyreport.json', 'w') as df:
-        for tkr in main_soup:
-            json.dump(tkr, df, indent = 2) 
-
 if __name__ == "__main__":
     main()
