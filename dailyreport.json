@@ -1,0 +1,26 @@
+{
+  "$ticker": "GSAH",
+  "price": "12.07",
+  "change": "+0.04 (+0.33%)",
+  "52 Week-range": "9.85 - 13.81"
+}{
+  "$ticker": "GIK",
+  "price": "14.08",
+  "change": "+0.17 (+1.22%)",
+  "52 Week-range": "9.79 - 17.36"
+}{
+  "$ticker": "APXT",
+  "price": "15.30",
+  "change": "+0.55 (+3.73%)",
+  "52 Week-range": "9.12 - 17.90"
+}{
+  "$ticker": "THCB",
+  "price": "19.64",
+  "change": "+0.76 (+4.03%)",
+  "52 Week-range": "9.16 - 25.20"
+}{
+  "$ticker": "TTCF",
+  "price": "23.42",
+  "change": "-0.41 (-1.72%)",
+  "52 Week-range": "10.33 - 27.80"
+}
