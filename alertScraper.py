@@ -21,7 +21,8 @@ class just_scrape():
             '$ticker' : ticker,
             'price' : data.find('div', {'class': 'D(ib) Mend(20px)'}).find_all('span')[0].text,
             'change' : data.find('div', {'class': 'D(ib) Mend(20px)'}).find_all('span')[1].text,
-            '52 Week-range' : data.find('table', {'class': 'W(100%)'}).find_all('td')[11].text
+            '52 Week-range' : data.find('table', {'class': 'W(100%)'}).find_all('td')[11].text,
+            'Alerts' : ''
             }
             datalist.append(equity)
-        return datalist     
+        return datalist
