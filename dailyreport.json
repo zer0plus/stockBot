@@ -1,43 +1,49 @@
 {
   "$ticker": "QQQ",
-  "price": "336.45",
-  "change": "+1.87 (+0.56%)",
-  "52 Week-range": "164.93 - 336.62",
+  "price": "334.09",
+  "change": "+2.58 (+0.78%)",
+  "52 Week-range": "215.99 - 342.80",
   "Alerts": "Trading near All Time High!"
 }{
   "$ticker": "GSAH",
-  "price": "12.07",
-  "change": "+0.04 (+0.33%)",
-  "52 Week-range": "9.85 - 13.81",
+  "price": "10.21",
+  "change": "-0.02 (-0.20%)",
+  "52 Week-range": "9.85 - 16.66",
   "Alerts": "None"
 }{
   "$ticker": "GIK",
-  "price": "14.08",
-  "change": "+0.17 (+1.22%)",
-  "52 Week-range": "9.79 - 17.36",
+  "price": "7.82",
+  "change": "-0.12 (-1.51%)",
+  "52 Week-range": "7.55 - 17.36",
   "Alerts": "None"
 }{
   "$ticker": "APXT",
-  "price": "15.30",
-  "change": "+0.55 (+3.73%)",
-  "52 Week-range": "9.12 - 17.90",
+  "price": "10.15",
+  "change": "-0.01 (-0.10%)",
+  "52 Week-range": "9.63 - 17.90",
   "Alerts": "None"
 }{
   "$ticker": "THCB",
-  "price": "19.64",
-  "change": "+0.76 (+4.03%)",
-  "52 Week-range": "9.16 - 25.20",
+  "price": "12.12",
+  "change": "+0.35 (+2.97%)",
+  "52 Week-range": "10.04 - 25.20",
   "Alerts": "None"
 }{
   "$ticker": "TTCF",
-  "price": "23.42",
-  "change": "-0.41 (-1.72%)",
-  "52 Week-range": "10.33 - 27.80",
+  "price": "17.37",
+  "change": "+0.44 (+2.60%)",
+  "52 Week-range": "10.34 - 28.64",
   "Alerts": "None"
 }{
   "$ticker": "CCIV",
-  "price": "39.98",
-  "change": "+8.48 (+26.92%)",
-  "52 Week-range": "9.60 - 41.37",
-  "Alerts": "Trading near All Time High!"
+  "price": "19.28",
+  "change": "+0.32 (+1.69%)",
+  "52 Week-range": "9.60 - 64.86",
+  "Alerts": "None"
+}{
+  "$ticker": "tsla",
+  "price": "672.08",
+  "change": "+8.54 (+1.29%)",
+  "52 Week-range": "152.66 - 900.40",
+  "Alerts": "None"
 }
