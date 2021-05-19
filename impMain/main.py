@@ -1,8 +1,8 @@
 import news_scrape
+import moving_avg
 
 def main():
     ticker = str(input("Please enter the Stock ticker that you would like to analyze: "))
-    
     totalChoices = 3
 
     print()
@@ -17,16 +17,17 @@ def main():
             print()
             i = int(input("Please Enter your selection: "))
             if (i < 0 or i > totalChoices):
-                # print()
                 print("ERROR: Please enter an integer value between 0-3")
-            else:
+            elif(i == 0):
                 break
+            elif(i == 1):
+                news_scrape.scrape_news(ticker)
+            elif(i == 2):
+                moving_avg.move_avg(ticker)
         except Exception:
-            # print()
             print("ERROR: Please enter an integer value between 0-3")
             continue
-    if (i == 1):
-        news_scrape.scrape_news(ticker)
+
 
 if __name__ == "__main__":
     main()
