@@ -47,7 +47,3 @@ def scrape_news(ticker):
         print(str(article[1]) + " - " + str(article[2]) + ": "+ str(article[0]))
         print("--> " + str(article[-1]))
         print()
-
-    # return articles_list[:5]
-
-# (scrape_news("AAPL"))

@@ -4,10 +4,10 @@ import matplotlib.pyplot as plt
 import datetime
 import numpy as np
 
-start = datetime.datetime(2018, 1, 1)
-end = datetime.datetime.now()
-
 def move_avg(ticker):
+    start = datetime.datetime(2018, 1, 1)
+    end = datetime.datetime.now()
+
     plot_avg = web.DataReader(ticker, 'yahoo', start, end)
     plot_avg['MA50'] = plot_avg['Close'].rolling(50).mean()
     plot_avg['Close'].plot(figsize=(15,7))
@@ -17,5 +17,3 @@ def move_avg(ticker):
     plt.title(ticker)
     plt.legend()
     plt.show()
-
-# move_avg("TSLA")

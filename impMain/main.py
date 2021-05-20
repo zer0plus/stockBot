@@ -1,6 +1,6 @@
 import news_scrape
 import moving_avg
-
+import correlation
 def main():
     ticker = str(input("Please enter the Stock ticker that you would like to analyze: "))
     totalChoices = 3
@@ -24,7 +24,11 @@ def main():
                 news_scrape.scrape_news(ticker)
             elif(i == 2):
                 moving_avg.move_avg(ticker)
-        except Exception:
+            elif(i ==3):
+                ticker2 = str(input("Please enter the Stock ticker that you would like to compare: "))
+                correlation.correlate(ticker, ticker2)
+
+        except Exception as e:
             print("ERROR: Please enter an integer value between 0-3")
             continue
 
