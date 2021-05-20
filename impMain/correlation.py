@@ -13,4 +13,3 @@ def correlate(ticker1, ticker2):
     comparison = pd.concat([plot_cr1['Close'], plot_cr2['Close']], axis = 1)
     comparison.columns = [ticker1, ticker2]
     scatter_matrix(comparison, figsize=(8, 8), hist_kwds={'bins':50})
-
