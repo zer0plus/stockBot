@@ -20,21 +20,19 @@ def scrape_news(ticker):
     r = requests.get(url, headers=headers)
     data = BeautifulSoup(r.text, 'html.parser')
     articles = data.find_all('div', 'NewsArticle')
-    card = articles[0]
 
     def get_news(newsPiece):
         title = newsPiece.find('h4', 's-title').text
-        source = newstitle = newsPiece.find('span', 's-source').text
-        date_posted = newstitle = newsPiece.find('span', 's-time').text.replace('·', '').strip()
-        desc = newstitle = newsPiece.find('p', 's-desc').text.strip()
-        url_raw = newstitle = newsPiece.find('a').get('href')
+        source = newsPiece.find('span', 's-source').text
+        date_posted = newsPiece.find('span', 's-time').text.replace('·', '').strip()
+        desc = newsPiece.find('p', 's-desc').text.strip()
+        url_raw = newsPiece.find('a').get('href')
         url_raw_u = requests.utils.unquote(url_raw)
         reg = re.compile(r'RU=(.+)\/RK')
         url_final = re.search(reg, url_raw_u).group(1)
 
         return (title, source, date_posted, desc, url_final)
     
-
     for article in articles:
         art1 = get_news(article)
         link = art1[-1]
