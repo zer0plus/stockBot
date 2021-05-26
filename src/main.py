@@ -15,7 +15,7 @@ def main():
     while(True):
         try:
             print()
-            i = int(input("Please Enter your selection: "))
+            i = int(input("Please Enter your selection, or enter 0 to exit: "))
             if (i < 0 or i > totalChoices):
                 print("ERROR: Please enter an integer value between 0-3")
             elif(i == 0):
