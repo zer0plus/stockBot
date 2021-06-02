@@ -1,8 +1,8 @@
 from bs4 import BeautifulSoup
 import requests
-import json
-import time
+import pandas as pd
 import re
+from nltk.sentiment.vader import SentimentIntensityAnalyzer
 
 def scrape_news(ticker):
     url = f'https://news.search.yahoo.com/search?p={ticker}'
@@ -40,8 +40,35 @@ def scrape_news(ticker):
             links.add(link)
             news.append(art1)
 
+
+    df = pd.DataFrame(news, columns=["Title", "Source", "Date", "Desc", "URL"])
+    vader = SentimentIntensityAnalyzer()
+    lmbd = lambda title: vader.polarity_scores(title)['compound']
+    df["Sentiment Rating"] = df["Desc"].apply(lmbd)
+
     print("------------------------------------" + str(ticker) + " News ------------------------------------" + "\n")
-    for article in news[:5]:
+
+    total_compound = 0
+
+    for article in (news[:6]):
         print(str(article[1]) + " - " + str(article[2]) + ": "+ str(article[0]))
         print("--> " + str(article[-1]))
+        total_compound += df.loc[df.Title == article[0], "Sentiment Rating"].item()
+        if (df.loc[df.Title == article[0], "Sentiment Rating"].item() < 0):
+            print("Sentiment Rating: Negative")
+        elif (df.loc[df.Title == article[0], "Sentiment Rating"].item() == 0):
+            print("Sentiment Rating: Neutral")
+        elif (df.loc[df.Title == article[0], "Sentiment Rating"].item() > 0):
+            print("Sentiment Rating: Positive")
         print()
+
+    if (total_compound/6 > 0 and total_compound/6 < 0.2):
+        print("Overall News: Midly Positive")
+    elif (total_compound/6 > 0 and total_compound/6 > 0.2):
+        print("Overall News: Very Positive")
+    elif (total_compound/6 < 0 and total_compound/6 > -0.2):
+        print("Overall News: Very Negative")
+    elif (total_compound/6 < 0 and total_compound/6 < -0.2):
+        print("Overall News: Midly Negative")
+    elif (total_compound/6 == 0):
+        print("Overall News: Neutral")
