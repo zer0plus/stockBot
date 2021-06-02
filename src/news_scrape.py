@@ -44,7 +44,7 @@ def scrape_news(ticker):
     df = pd.DataFrame(news, columns=["Title", "Source", "Date", "Desc", "URL"])
     vader = SentimentIntensityAnalyzer()
     lmbd = lambda title: vader.polarity_scores(title)['compound']
-    df["Sentiment Rating"] = df["Desc"].apply(lmbd)
+    df["Sentiment Rating"] = df["Title"].apply(lmbd)
 
     print("------------------------------------" + str(ticker) + " News ------------------------------------" + "\n")
 
